@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <img id="image" src="https://i.postimg.cc/ZKGM3hmv/camphoto-2110444415.jpg" alt="Image 1"/>
+
+    <script>
+        const images = [
+            "https://i.postimg.cc/ZKGM3hmv/camphoto-2110444415.jpg",
+            "https://i.postimg.cc/1zc2s7Ln/512-20240915230842.png",
+            "https://i.postimg.cc/rsbYQBtb/513-20240915230029.png",
+            "https://i.postimg.cc/BZwySKwg/514-20240915230119.png",
+            "https://i.postimg.cc/vTDN7YDf/515-20240915230243.png",
+            "https://i.postimg.cc/ZRwQyBYJ/516-20240915230334.png",
+            "https://i.postimg.cc/nhqwGwVR/517-20240915230417.png",
+            "https://i.postimg.cc/Gprg7JHc/517-20240915230504.png",
+            "https://i.postimg.cc/KvkWR86y/518-20240915230748.png",
+            "https://i.postimg.cc/tTqfTtjr/519-20240915230830.png"
+        ];
+
+        let currentIndex = 0;
+
+        document.body.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('image').src = images[currentIndex];
+        });
+    </script>
+</body>
+</html>
